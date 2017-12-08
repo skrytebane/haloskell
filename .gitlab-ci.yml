@@ -1,0 +1,6 @@
+image: fpco/stack-build
+
+build:
+  script:
+    - stack setup
+    - stack build
