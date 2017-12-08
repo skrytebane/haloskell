@@ -15,5 +15,7 @@ spec = do
   describe "strip" $ do
     it "removes leading and trailing whitespace" $ do
       strip "\t  foo bar\n" `shouldBe` "foo bar"
+    it "fails on a nonsensical test" $ do
+      strip "foo bar\n" `shouldBe` "foo bar\n"
     it "is idempotent" $ property $
       \str -> strip str === strip (strip str)
